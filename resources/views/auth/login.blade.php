@@ -16,7 +16,9 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
+                                <span class="text-muted">
+                                    Use <strong class="text-black">admin@openpayroll.com</strong> to login this demo application.
+                                </span>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -30,7 +32,9 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
+                                <span class="text-muted">
+                                    The password is <strong class="text-black">password</strong>
+                                </span>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
