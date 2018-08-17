@@ -48,7 +48,7 @@ class DemoSeeder extends Seeder
     		]);
 
     		$user->salary()->create([
-    			'amount' => $this->faker->randomElement(range(10000, 20000)),
+    			'amount' => $this->faker->randomElement(range(10000, 20000)) * 100,
     		]);
     	});
     }

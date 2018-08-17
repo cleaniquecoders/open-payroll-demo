@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class PayrollController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class PayrollController extends Controller
      */
     public function index()
     {
-        //
+        $payrolls = \App\Models\Payroll::latest()->paginate();
+        return view('payroll.index', compact('payrolls'));
     }
 
     /**
@@ -46,7 +52,8 @@ class PayrollController extends Controller
      */
     public function show($id)
     {
-        //
+        $payroll = \App\Models\Payroll::with('payslips', 'payslips.user')->where('hashslug', $id)->firstOrFail();
+        return view('payroll.show', compact('payroll'));
     }
 
     /**
