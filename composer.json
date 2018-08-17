@@ -58,11 +58,5 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": {
-        "local": {
-            "type": "path",
-            "url": "../open-payroll"
-        }
-    }
+    "prefer-stable": true
 }
