@@ -297,16 +297,16 @@
         },
         {
             "name": "cleaniquecoders/profile",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/profile.git",
-                "reference": "6a9ad88e1662baa2b8c8ee3d30268d8004fe5411"
+                "reference": "1223c1a288519a899dbb105ff6f5046d7fda5567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/profile/zipball/6a9ad88e1662baa2b8c8ee3d30268d8004fe5411",
-                "reference": "6a9ad88e1662baa2b8c8ee3d30268d8004fe5411",
+                "url": "https://api.github.com/repos/cleaniquecoders/profile/zipball/1223c1a288519a899dbb105ff6f5046d7fda5567",
+                "reference": "1223c1a288519a899dbb105ff6f5046d7fda5567",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
                 }
             ],
             "description": "Common Profile Information",
-            "time": "2018-08-16T05:32:36+00:00"
+            "time": "2018-08-17T13:47:11+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
