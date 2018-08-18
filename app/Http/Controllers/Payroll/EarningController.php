@@ -101,6 +101,10 @@ class EarningController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Models\Earning::whereHashslug($id)->delete();
+
+        swal()->success('Earning', 'You have successfully delete an earning.');
+
+        return back();
     }
 }

@@ -8,12 +8,12 @@
                 <div class="card-header">{{ __('Create New Deduction') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('deduction.store', ['payslip' => request()->hashslug]) }}" aria-label="{{ __('Create New Deduction') }}">
+                    <form method="POST" action="{{ route('deduction.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Deduction') }}">
                         @csrf
-                        <input type="hidden" name="payslip" id="payslip" value="{{ request()->hashslug }}">
+                        <input type="hidden" name="payslip" id="payslip" value="{{ request()->payslip }}">
                         <div class="form-group">
-                            <label for="payroll">{{ __('Choose Deduction Type:') }}</label>
-                            <select name="payroll" id="payroll" class="form-control">
+                            <label for="type">{{ __('Choose Deduction Type:') }}</label>
+                            <select name="type" id="type" class="form-control">
                                 @foreach($types as $type)
                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
                                 @endforeach

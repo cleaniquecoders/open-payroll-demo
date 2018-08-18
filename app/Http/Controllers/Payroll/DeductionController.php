@@ -36,7 +36,27 @@ class DeductionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'payslip' => 'required',
+            'type' => 'required',
+            'amount' => 'required',
+        ]);
+
+        $payslip = \App\Models\Payslip::with('payroll', 'user')->whereHashslug($request->payslip)->firstOrFail();
+        $type = \App\Models\DeductionType::find($request->type);
+
+        $payslip->deductions()->create([
+            'user_id' => $payslip->user_id,
+            'payroll_id' => $payslip->payroll_id,
+            'deduction_type_id' => $request->type,
+            'name' => $type->name,
+            'description' => $type->name,
+            'amount' => money()->toMachine($request->amount),
+        ]);
+
+        swal()->success('Deduction', 'You have successfully added new earning.');
+
+        return redirect()->route('payslip.show', $request->payslip);
     }
 
     /**
@@ -81,6 +101,10 @@ class DeductionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Models\Deduction::whereHashslug($id)->delete();
+
+        swal()->success('Deduction', 'You have successfully delete an earning.');
+
+        return back();
     }
 }
