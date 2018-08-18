@@ -6,12 +6,7 @@
 			<div class="col">
 				<div class="card">
 					<div class="card-header">
-						<h4>
-							{{ $payroll->title }}
-							<a href="{{ route('payslip.create', ['payroll' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
-								{{ __('Create Payslips') }}
-							</a>
-						</h4>
+						{{ $payroll->title }}
 					</div>
 					<div class="card-body">
 						<table class="table table-hover table-condensed">

@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('payroll', 'Payroll\PayrollController');
+
+Route::resource('payslip', 'Payroll\PayslipController');

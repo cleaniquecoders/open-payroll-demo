@@ -21,4 +21,9 @@ class Employee extends User
 	{
 		return $this->hasOne(Position::class, 'user_id');
 	}
+
+	public function payslips()
+	{
+		return $this->hasMany(Payslip::class, 'user_id');
+	}
 }
