@@ -1,7 +1,7 @@
 <div class="card">
 	<div class="card-header">
 		{{ __('Earnings') }}
-		<a href="" class="btn btn-sm border-primary float-right">New Earning</a>
+		<a href="{{ route('earning.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Earning</a>
 	</div>
 	<div class="card-body">
 		<table class="table table-condensed">

@@ -28,9 +28,9 @@ return [
         'payslip'          => \App\Models\Payslip::class,
         'payslip_statuses' => \CleaniqueCoders\OpenPayroll\Models\Payslip\Status::class,
         'deduction'        => \App\Models\Deduction::class,
-        'deduction_types'  => \CleaniqueCoders\OpenPayroll\Models\Deduction\Type::class,
+        'deduction_types'  => \App\Models\DeductionType::class,
         'earning'          => \App\Models\Earning::class,
-        'earning_types'    => \CleaniqueCoders\OpenPayroll\Models\Earning\Type::class,
+        'earning_types'    => \App\Models\EarningType::class,
     ],
     'tables' => [
         'names' => [

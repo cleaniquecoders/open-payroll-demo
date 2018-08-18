@@ -7,6 +7,7 @@
 				<div class="card">
 					<div class="card-header">
 						{{ $payslip->title }}
+						<a href="{{ route('payslip.recalculate', $payslip->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right">Recalculate</a>
 					</div>
 					<div class="card-body">
 						<p><span class="font-weight-bold">Employee Name: </span>{{ $payslip->user->name }}</p>
