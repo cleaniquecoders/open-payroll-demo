@@ -11,6 +11,11 @@ class Payslip extends OPPayslip
 		return 'Payslip from ' . $this->payroll->title; 
 	}
 
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Employee::class, 'user_id');
+    }
+
 	public function earnings()
 	{
 		return $this->hasMany(Earning::class);
