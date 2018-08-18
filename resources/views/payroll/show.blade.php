@@ -81,10 +81,12 @@
 									<td colspan="8" class="text-center">No data available</td>
 								</tr>
 							@endforelse
-						</div>
+						</table>
 					</div>
 				</div>
 			</div>
 		</div>
+		<hr>
+		<a href="{{ route('payroll.index') }}" class="btn border-primary">Back</a>
 	</div>
 @endsection

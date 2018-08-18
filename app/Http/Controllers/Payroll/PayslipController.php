@@ -42,7 +42,6 @@ class PayslipController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate($request, [
             'payroll' => 'required',
             'user_id' => 'required',
@@ -78,7 +77,9 @@ class PayslipController extends Controller
      */
     public function show($id)
     {
-        //
+        $payslip = \App\Models\Payslip::whereHashslug($id)->with('payroll', 'earnings', 'earnings.type', 'deductions', 'deductions.type')->firstOrFail();
+
+        return view('payslip.show', compact('payslip'));
     }
 
     /**
