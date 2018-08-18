@@ -5,9 +5,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="card">
-					<div class="card-header">Payroll {{ \Carbon\Carbon::parse($payroll->year . '-' . $payroll->month . '-1')->format('M') }}, {{ $payroll->year }}</div>
-						<div class="card-body">
-							<table class="table table-hover table-condensed">
+					<div class="card-header">
+						{{ $payroll->title }}
+					</div>
+					<div class="card-body">
+						<table class="table table-hover table-condensed">
 							<tr>
 								<th class="text-center">Employee</th>
 								<th class="text-center">Basic Salary</th>

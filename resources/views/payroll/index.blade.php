@@ -4,9 +4,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<div class="card">
-					<div class="card-header">Payrolls</div>
-					<div class="card-body">
+				<div class="card border-0">
+					<div class="card-header bg-white border-0">
+						<h4>
+							Payrolls
+							<a href="{{ route('payroll.create') }}" class="float-right btn btn-default border border-info">Create New Payroll</a>
+						</h4>
+					</div>
+					<div class="card-body  border-0">
 						<div class="float-right">
 							{{ $payrolls->links() }}
 						</div>

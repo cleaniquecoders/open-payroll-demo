@@ -30,7 +30,7 @@ class PayrollController extends Controller
      */
     public function create()
     {
-        //
+        return view('payroll.create');
     }
 
     /**
@@ -41,7 +41,15 @@ class PayrollController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'month' => 'required|min:1|max:12',
+            'year' => 'required',
+            'date' => 'required'
+        ]);
+
+        $payroll = \App\Models\Payroll::create($request->only('user_id', 'month', 'year', 'date'));
+
+        return redirect()->route('payroll.show', $payroll->hashslug);
     }
 
     /**
