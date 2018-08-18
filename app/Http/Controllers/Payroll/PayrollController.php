@@ -49,6 +49,8 @@ class PayrollController extends Controller
 
         $payroll = \App\Models\Payroll::create($request->only('user_id', 'month', 'year', 'date'));
 
+        swal()->success('Payroll', 'You have successfully created a payroll.');
+
         return redirect()->route('payroll.show', $payroll->hashslug);
     }
 
@@ -95,6 +97,15 @@ class PayrollController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $payroll = \App\Models\Payroll::whereHashslug($id)->firstOrFail();        
+
+        if($payroll->is_locked) {
+            swal()->error('Payroll', 'You cannot delete locked payroll.');
+            return redirect()->route('payroll.index');
+        }
+
+        $payroll->delete();
+        swal()->success('Payroll', 'You have successfully delete a payroll');
+        return redirect()->route('payroll.index');
     }
 }

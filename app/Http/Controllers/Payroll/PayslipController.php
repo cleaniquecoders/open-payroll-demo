@@ -65,6 +65,8 @@ class PayslipController extends Controller
             ]);
         }
 
+        swal()->success('Payslip', 'You have successfully created payslip(s).');
+
         return redirect()->route('payroll.show', $request->payroll);
     }
 

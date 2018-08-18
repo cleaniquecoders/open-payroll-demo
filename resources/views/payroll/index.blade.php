@@ -1,5 +1,26 @@
 @extends('layouts.app')
 
+@push('scripts')
+	<script>
+		function confirmToDelete(hashslug)
+		{
+			swal({
+			  title: 'Are you sure?',
+			  text: "You won't be able to revert this!",
+			  type: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+			  if (result.value) {
+			    document.getElementById('delete-form-' + hashslug).submit();
+			  }
+			})
+		}
+	</script>
+@endpush
+
 @section('content')
 	<div class="container">
 		<div class="row">
@@ -28,7 +49,18 @@
 									<td class="text-center">{{ $payroll->year }}</td>
 									<td class="text-center">{{ $payroll->date->format('l, d-M-Y') }}</td>
 									<td class="text-center">
-										<a href="{{ route('payroll.show', $payroll->hashslug) }}" class="btn btn-default">Details</a>
+										<div class="btn-group">
+											<a href="{{ route('payroll.show', $payroll->hashslug) }}" class="btn border-primary text-primary">Details</a>
+											@if(!$payroll->is_locked)
+												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payroll->hashslug }}')">Delete</div>
+												<form id="delete-form-{{ $payroll->hashslug }}" 
+													action="{{ route('payroll.destroy', $payroll->hashslug) }}" 
+													method="POST" style="display: none;">
+			                                        @csrf
+			                                        @method('DELETE')
+			                                    </form>
+											@endif
+										</div>
 									</td>
 								</tr>
 							@empty

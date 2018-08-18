@@ -78,5 +78,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
     @stack('scripts')
+    @include('vendor.sweetalert.cdn')
+    @include('vendor.sweetalert.view')
+    @include('vendor.sweetalert.validator') 
 </body>
 </html>
