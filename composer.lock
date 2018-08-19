@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "cleaniquecoders/blueprint-macro",
-            "version": "v2.0.9",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/blueprint-macro.git",
-                "reference": "31e03be1fae599a30ebb50bbaf336576dc1acc89"
+                "reference": "2db6db354f9d53961de7db77a76785d58cb8a1a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/blueprint-macro/zipball/31e03be1fae599a30ebb50bbaf336576dc1acc89",
-                "reference": "31e03be1fae599a30ebb50bbaf336576dc1acc89",
+                "url": "https://api.github.com/repos/cleaniquecoders/blueprint-macro/zipball/2db6db354f9d53961de7db77a76785d58cb8a1a1",
+                "reference": "2db6db354f9d53961de7db77a76785d58cb8a1a1",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 }
             ],
             "description": "Laravel Blueprint Macro",
-            "time": "2018-08-16T04:46:15+00:00"
+            "time": "2018-08-19T06:27:12+00:00"
         },
         {
             "name": "cleaniquecoders/laravel-helper",
@@ -238,16 +238,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/open-payroll.git",
-                "reference": "9768908ca23ad8560f5bd754d19161c599ee4c59"
+                "reference": "ffc0ef9604fff093444e10d21942268d8f27bcee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/9768908ca23ad8560f5bd754d19161c599ee4c59",
-                "reference": "9768908ca23ad8560f5bd754d19161c599ee4c59",
+                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/ffc0ef9604fff093444e10d21942268d8f27bcee",
+                "reference": "ffc0ef9604fff093444e10d21942268d8f27bcee",
                 "shasum": ""
             },
             "require": {
-                "cleaniquecoders/blueprint-macro": "^2.0",
+                "cleaniquecoders/blueprint-macro": "^2.1",
                 "cleaniquecoders/laravel-helper": "^1.0",
                 "cleaniquecoders/laravel-observers": "^1.0",
                 "cleaniquecoders/money-wrapper": "^1.0",
@@ -293,7 +293,7 @@
                 "laravel",
                 "package"
             ],
-            "time": "2018-08-17T09:08:40+00:00"
+            "time": "2018-08-19T06:34:24+00:00"
         },
         {
             "name": "cleaniquecoders/profile",
