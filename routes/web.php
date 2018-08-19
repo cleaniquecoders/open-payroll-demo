@@ -24,4 +24,5 @@ Route::resource('payslip', 'Payroll\PayslipController');
 Route::resource('earning', 'Payroll\EarningController');
 Route::resource('deduction', 'Payroll\DeductionController');
 Route::get('recalculate/payslip/{id}', 'Payroll\RecalculatePayslipController')->name('payslip.recalculate');
+Route::get('recalculate/payroll/{id}', 'Payroll\RecalculatePayrollController')->name('payroll.recalculate');
 

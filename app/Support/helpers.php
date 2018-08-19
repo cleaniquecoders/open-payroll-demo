@@ -8,8 +8,8 @@ if(!function_exists('getYesNoClassName')) {
 }
 
 
-if(!function_exists('payroll')) {
-	function payroll($identifier)
+if(!function_exists('payrollProcessor')) {
+	function payrollProcessor($identifier)
 	{
 		return \App\Processors\PayrollProcessor::make($identifier);
 	}

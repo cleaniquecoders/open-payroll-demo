@@ -11,6 +11,8 @@ class RecalculatePayslipController extends Controller
     {
         payslip($id)->calculate();
 
+        swal()->success('Payroll', 'You have successfully recalculate a payslip.');
+
     	return redirect()->route('payslip.show', $id);
     }
 }

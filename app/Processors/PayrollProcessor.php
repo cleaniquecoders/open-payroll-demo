@@ -11,7 +11,11 @@ class PayrollProcessor implements CalculateContract
 
 	public function __construct($identifier = null)
 	{
-		$this->payroll = Payroll::whereId($identifier)->orWhere('hashslug', $identifier)->firstOrFail();
+		$this->payroll = Payroll::query()
+			->with('payslips', 'payslips.earnings', 'payslips.deductions', 'payslips.employee', 'payslips.employee.salary')
+			->whereId($identifier)
+			->orWhere('hashslug', $identifier)
+			->firstOrFail();
 	}
 
 	public static function make($identifier = null)
@@ -27,6 +31,9 @@ class PayrollProcessor implements CalculateContract
 
 	public function calculate()
 	{
-		// recalculate payslip.
+		$this->payroll->payslips->each(function($payslip){
+			payslip($payslip)->calculate();
+		});
+		return $this;
 	}
 }

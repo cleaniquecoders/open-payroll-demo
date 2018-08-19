@@ -29,12 +29,14 @@
 					<div class="card-header">
 						<h4>
 							{{ $payroll->title }}
+
 							<a href="{{ route('payslip.create', ['payroll' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
 								{{ __('Create Payslips') }}
 							</a>
 						</h4>
 					</div>
 					<div class="card-body">
+						<a href="{{ route('payroll.recalculate', $payroll->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right mb-2">Recalculate</a>
 						<table class="table table-hover table-condensed">
 							<tr>
 								<th class="text-center">Employee</th>
