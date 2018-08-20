@@ -10,7 +10,25 @@
 						<a href="{{ route('payslip.recalculate', $payslip->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right">Recalculate</a>
 					</div>
 					<div class="card-body">
-						<p><span class="font-weight-bold">Employee Name: </span>{{ $payslip->user->name }}</p>
+						<table class="table table-hover table-condensed">
+							<tr>
+								<th class="text-right">
+									Employee Name:
+								</th>
+								<td class="text-left">
+									{{ $payslip->user->name }}
+								</td>
+							</tr>
+							<tr>
+								<th class="text-right">
+									Position:
+								</th>
+								<td class="text-left">
+									{{ optional($payslip->user->position)->name ?? '-' }}
+								</td>
+							</tr>
+						</table>
+
 						<table class="table table-hover table-condensed">
 							<tr>
 								<th class="text-center">Basic Salary</th>
