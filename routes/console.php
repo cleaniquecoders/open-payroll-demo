@@ -20,8 +20,13 @@ Artisan::command('inspire', function () {
 Artisan::command('seed:demo', function () {
 	$this->info('Remigrate & seeding...');
 	Artisan::call('migrate:fresh', ['--seed' => true]);
+
+	$this->info('Seeding Open Payroll references...');
+    Artisan::call('open-payroll:seed');
+
 	$this->info('Seeding profile references...');
     Artisan::call('profile:seed');
+    
     $this->info('Seeding demo data...');
-    Artisan::call('db:seed', ['--class' => 'DemoSeeder']);
+    Artisan::call('open-payroll:seed:demo');
 })->describe('Seed Demo Data');

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4eca15037e38e3c0e2b473e4fd4c862",
+    "content-hash": "0794c2dd6edf761be846762dbdbae24d",
     "packages": [
         {
             "name": "cleaniquecoders/blueprint-macro",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/blueprint-macro.git",
-                "reference": "2db6db354f9d53961de7db77a76785d58cb8a1a1"
+                "reference": "b851e5fec51f149873c66d27c544e2a6d737e68f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/blueprint-macro/zipball/2db6db354f9d53961de7db77a76785d58cb8a1a1",
-                "reference": "2db6db354f9d53961de7db77a76785d58cb8a1a1",
+                "url": "https://api.github.com/repos/cleaniquecoders/blueprint-macro/zipball/b851e5fec51f149873c66d27c544e2a6d737e68f",
+                "reference": "b851e5fec51f149873c66d27c544e2a6d737e68f",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 }
             ],
             "description": "Laravel Blueprint Macro",
-            "time": "2018-08-19T06:27:12+00:00"
+            "time": "2018-08-20T03:03:59+00:00"
         },
         {
             "name": "cleaniquecoders/laravel-helper",
@@ -235,16 +235,11 @@
         {
             "name": "cleaniquecoders/open-payroll",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cleaniquecoders/open-payroll.git",
-                "reference": "ffc0ef9604fff093444e10d21942268d8f27bcee"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/ffc0ef9604fff093444e10d21942268d8f27bcee",
-                "reference": "ffc0ef9604fff093444e10d21942268d8f27bcee",
-                "shasum": ""
+                "type": "path",
+                "url": "../open-payroll",
+                "reference": "9300e7241ee743bad410783b96f726ae411f9996",
+                "shasum": null
             },
             "require": {
                 "cleaniquecoders/blueprint-macro": "^2.1",
@@ -278,7 +273,11 @@
                     "src/Support/helpers.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "CleaniqueCoders\\OpenPayroll\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -292,8 +291,7 @@
             "keywords": [
                 "laravel",
                 "package"
-            ],
-            "time": "2018-08-19T06:34:24+00:00"
+            ]
         },
         {
             "name": "cleaniquecoders/profile",

@@ -19,3 +19,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*
+|--------------------------------------------------------------------------
+| Open Payroll Web Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::namespace('OpenPayroll')
+	->group(function(){
+		Route::resource('payroll', 'PayrollController');
+		Route::resource('payslip', 'PayslipController');
+		Route::resource('earning', 'EarningController');
+		Route::resource('deduction', 'DeductionController');
+		Route::get('recalculate/payslip/{id}', 'RecalculatePayslipController')->name('payslip.recalculate');
+		Route::get('recalculate/payroll/{id}', 'RecalculatePayrollController')->name('payroll.recalculate');
+	});
