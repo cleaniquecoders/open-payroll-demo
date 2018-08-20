@@ -8,7 +8,7 @@
                 <div class="card-header bg-white border-0">{{ __('Create New Earning') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('earning.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Earning') }}">
+                    <form method="POST" action="{{ route('open-payroll.earning.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Earning') }}">
                         @csrf
                         <input type="hidden" name="payslip" id="payslip" value="{{ request()->payslip }}">
                         <div class="form-group">

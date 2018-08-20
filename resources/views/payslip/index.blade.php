@@ -8,7 +8,7 @@
 					<div class="card-header bg-white border-0">
 						<h4>
 							Payrolls
-							<a href="{{ route('payroll.create') }}" class="float-right btn btn-default border border-info">Create New Payroll</a>
+							<a href="{{ route('open-payroll.payroll.create') }}" class="float-right btn btn-default border border-info">Create New Payroll</a>
 						</h4>
 					</div>
 					<div class="card-body  border-0">
@@ -28,7 +28,7 @@
 									<td class="text-center">{{ $payroll->year }}</td>
 									<td class="text-center">{{ $payroll->date->format('l, d-M-Y') }}</td>
 									<td class="text-center">
-										<a href="{{ route('payroll.show', $payroll->hashslug) }}" class="btn btn-default">Details</a>
+										<a href="{{ route('open-payroll.payroll.show', $payroll->hashslug) }}" class="btn btn-default">Details</a>
 									</td>
 								</tr>
 							@empty

@@ -29,7 +29,7 @@
 					<div class="card-header bg-white border-0">
 						<h4>
 							Payrolls
-							<a href="{{ route('payroll.create') }}" class="float-right btn btn-default border border-info">Create New Payroll</a>
+							<a href="{{ route('open-payroll.payroll.create') }}" class="float-right btn btn-default border border-info">Create New Payroll</a>
 						</h4>
 					</div>
 					<div class="card-body  border-0">
@@ -50,11 +50,11 @@
 									<td class="text-center">{{ $payroll->date->format('l, d-M-Y') }}</td>
 									<td class="text-center">
 										<div class="btn-group">
-											<a href="{{ route('payroll.show', $payroll->hashslug) }}" class="btn border-primary text-primary">Details</a>
+											<a href="{{ route('open-payroll.payroll.show', $payroll->hashslug) }}" class="btn border-primary text-primary">Details</a>
 											@if(!$payroll->is_locked)
 												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payroll->hashslug }}')">Delete</div>
 												<form id="delete-form-{{ $payroll->hashslug }}" 
-													action="{{ route('payroll.destroy', $payroll->hashslug) }}" 
+													action="{{ route('open-payroll.payroll.destroy', $payroll->hashslug) }}" 
 													method="POST" style="display: none;">
 			                                        @csrf
 			                                        @method('DELETE')

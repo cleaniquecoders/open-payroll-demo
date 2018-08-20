@@ -18,7 +18,7 @@
                 <div class="card-header bg-white border-0">{{ __('Create New Payslip') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('payslip.store') }}" aria-label="{{ __('Create New Payslip') }}">
+                    <form method="POST" action="{{ route('open-payroll.payslip.store') }}" aria-label="{{ __('Create New Payslip') }}">
                         @csrf
                         <input type="hidden" name="user_id" id="user_id" value={{ auth()->user()->id }}>
 

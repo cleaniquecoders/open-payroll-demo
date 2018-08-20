@@ -53,7 +53,7 @@ class PayrollController extends Controller
 
         swal()->success('Payroll', 'You have successfully created a payroll.');
 
-        return redirect()->route('payroll.show', $payroll->hashslug);
+        return redirect()->route('open-payroll.payroll.show', $payroll->hashslug);
     }
 
     /**
@@ -107,12 +107,12 @@ class PayrollController extends Controller
         if ($payroll->is_locked) {
             swal()->error('Payroll', 'You cannot delete locked payroll.');
 
-            return redirect()->route('payroll.index');
+            return redirect()->route('open-payroll.payroll.index');
         }
 
         $payroll->delete();
         swal()->success('Payroll', 'You have successfully delete a payroll');
 
-        return redirect()->route('payroll.index');
+        return redirect()->route('open-payroll.payroll.index');
     }
 }

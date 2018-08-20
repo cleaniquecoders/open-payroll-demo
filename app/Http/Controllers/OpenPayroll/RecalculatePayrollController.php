@@ -13,6 +13,6 @@ class RecalculatePayrollController extends Controller
 
         swal()->success('Payroll', 'You have successfully recalculate all paylips.');
 
-        return redirect()->route('payroll.show', $id);
+        return redirect()->route('open-payroll.payroll.show', $id);
     }
 }

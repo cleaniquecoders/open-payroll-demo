@@ -8,7 +8,7 @@
                 <div class="card-header bg-white border-0">{{ __('Create New Payroll') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('payroll.store') }}" aria-label="{{ __('Create New Payroll') }}">
+                    <form method="POST" action="{{ route('open-payroll.payroll.store') }}" aria-label="{{ __('Create New Payroll') }}">
                         @csrf
 						<input type="hidden" name="user_id" id="user_id" value={{ auth()->user()->id }}>
                         <div class="form-group row">

@@ -58,7 +58,7 @@ class EarningController extends Controller
 
         swal()->success('Earning', 'You have successfully added new earning.');
 
-        return redirect()->route('payslip.show', $request->payslip);
+        return redirect()->route('open-payroll.payslip.show', $request->payslip);
     }
 
     /**

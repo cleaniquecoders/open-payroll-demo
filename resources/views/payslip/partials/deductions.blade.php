@@ -22,7 +22,7 @@
 <div class="card bg-white border-0 shadow-sm rounded">
 	<div class="card-header bg-white border-0">
 		{{ __('Earnings') }}
-		<a href="{{ route('deduction.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Deduction</a>
+		<a href="{{ route('open-payroll.deduction.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Deduction</a>
 	</div>
 	<div class="card-body">
 		<table class="table table-condensed">
@@ -31,9 +31,9 @@
 					<th>{{ $deduction->type->name }}</th>
 					<td>{{ money()->toHuman($deduction->amount ?? 0) }}</td>
 					<td class="text-center">
-						<div class="btn btn-sm border-danger text-danger" onclick="confirmToDeleteEarning('{{ $deduction->hashslug }}')">Delete</div>
+						<div class="btn btn-sm border-danger text-danger" onclick="confirmToDeleteDeduction('{{ $deduction->hashslug }}')">Delete</div>
 						<form id="delete-deduction-form-{{ $deduction->hashslug }}" 
-							action="{{ route('deduction.destroy', $deduction->hashslug) }}" 
+							action="{{ route('open-payroll.deduction.destroy', $deduction->hashslug) }}" 
 							method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')

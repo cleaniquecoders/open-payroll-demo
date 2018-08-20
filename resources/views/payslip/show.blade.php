@@ -7,7 +7,7 @@
 				<div class="card bg-white border-0 shadow-sm rounded">
 					<div class="card-header bg-white border-0">
 						{{ $payslip->title }}
-						<a href="{{ route('payslip.recalculate', $payslip->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right">Recalculate</a>
+						<a href="{{ route('open-payroll.payslip.recalculate', $payslip->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right">Recalculate</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-hover table-condensed">
@@ -55,6 +55,6 @@
 			</div>
 		</div>
 		<hr>
-		<a href="{{ route('payroll.show', $payslip->payroll->hashslug) }}" class="btn border-primary">Back</a>
+		<a href="{{ route('open-payroll.payroll.show', $payslip->payroll->hashslug) }}" class="btn border-primary">Back</a>
 	</div>
 @endsection

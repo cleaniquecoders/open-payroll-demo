@@ -30,13 +30,13 @@
 						<h4>
 							{{ $payroll->title }}
 
-							<a href="{{ route('payslip.create', ['payroll' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
+							<a href="{{ route('open-payroll.payslip.create', ['payroll' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
 								{{ __('Create Payslips') }}
 							</a>
 						</h4>
 					</div>
 					<div class="card-body">
-						<a href="{{ route('payroll.recalculate', $payroll->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right mb-2">Recalculate</a>
+						<a href="{{ route('open-payroll.payroll.recalculate', $payroll->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right mb-2">Recalculate</a>
 						<table class="table table-hover table-condensed">
 							<tr>
 								<th class="text-center">Employee</th>
@@ -65,11 +65,11 @@
 									</td>
 									<td class="text-center">
 										<div class="btn-group">
-											<a href="{{ route('payslip.show', $payslip->hashslug) }}" class="btn border-primary text-primary">Details</a>
+											<a href="{{ route('open-payroll.payslip.show', $payslip->hashslug) }}" class="btn border-primary text-primary">Details</a>
 											@if(!$payslip->is_locked)
 												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payslip->hashslug }}')">Delete</div>
 												<form id="delete-form-{{ $payslip->hashslug }}" 
-													action="{{ route('payslip.destroy', $payslip->hashslug) }}" 
+													action="{{ route('open-payroll.payslip.destroy', $payslip->hashslug) }}" 
 													method="POST" style="display: none;">
 			                                        @csrf
 			                                        @method('DELETE')
@@ -89,6 +89,6 @@
 			</div>
 		</div>
 		<hr>
-		<a href="{{ route('payroll.index') }}" class="btn border-primary">Back</a>
+		<a href="{{ route('open-payroll.payroll.index') }}" class="btn border-primary">Back</a>
 	</div>
 @endsection

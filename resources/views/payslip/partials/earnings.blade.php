@@ -22,7 +22,7 @@
 <div class="card bg-white border-0 shadow-sm rounded">
 	<div class="card-header bg-white border-0">
 		{{ __('Earnings') }}
-		<a href="{{ route('earning.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Earning</a>
+		<a href="{{ route('open-payroll.earning.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Earning</a>
 	</div>
 	<div class="card-body">
 		<table class="table table-condensed">
@@ -33,7 +33,7 @@
 					<td class="text-center">
 						<div class="btn btn-sm border-danger text-danger" onclick="confirmToDeleteEarning('{{ $earning->hashslug }}')">Delete</div>
 						<form id="delete-earning-form-{{ $earning->hashslug }}" 
-							action="{{ route('earning.destroy', $earning->hashslug) }}" 
+							action="{{ route('open-payroll.earning.destroy', $earning->hashslug) }}" 
 							method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')

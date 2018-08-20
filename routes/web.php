@@ -26,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 */
 
 Route::namespace('OpenPayroll')
+	->prefix('OpenPayroll')
+	->as('open-payroll.')
 	->group(function(){
 		Route::resource('payroll', 'PayrollController');
 		Route::resource('payslip', 'PayslipController');
@@ -33,4 +35,14 @@ Route::namespace('OpenPayroll')
 		Route::resource('deduction', 'DeductionController');
 		Route::get('recalculate/payslip/{id}', 'RecalculatePayslipController')->name('payslip.recalculate');
 		Route::get('recalculate/payroll/{id}', 'RecalculatePayrollController')->name('payroll.recalculate');
+
+		Route::get('setting', 'SettingController')->name('setting.index');
+
+		Route::namespace('Setting')
+			->prefix('setting')
+			->as('setting.')
+			->group(function(){
+				Route::resource('deduction', 'DeductionController');
+				Route::resource('earning', 'DeductionController');
+			});
 	});

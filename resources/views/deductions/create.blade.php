@@ -8,7 +8,7 @@
                 <div class="card-header bg-white border-0">{{ __('Create New Deduction') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('deduction.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Deduction') }}">
+                    <form method="POST" action="{{ route('open-payroll.deduction.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Deduction') }}">
                         @csrf
                         <input type="hidden" name="payslip" id="payslip" value="{{ request()->payslip }}">
                         <div class="form-group">
