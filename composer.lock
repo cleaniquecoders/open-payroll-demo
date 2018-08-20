@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4eca15037e38e3c0e2b473e4fd4c862",
+    "content-hash": "a3a5375322f97c2f32d3bc16e68cf67b",
     "packages": [
         {
             "name": "cleaniquecoders/blueprint-macro",
@@ -238,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/open-payroll.git",
-                "reference": "9300e7241ee743bad410783b96f726ae411f9996"
+                "reference": "dae9affa139e594ce223efed556dd37045b38162"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/9300e7241ee743bad410783b96f726ae411f9996",
-                "reference": "9300e7241ee743bad410783b96f726ae411f9996",
+                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/dae9affa139e594ce223efed556dd37045b38162",
+                "reference": "dae9affa139e594ce223efed556dd37045b38162",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +293,7 @@
                 "laravel",
                 "package"
             ],
-            "time": "2018-08-19T08:45:50+00:00"
+            "time": "2018-08-20T05:05:38+00:00"
         },
         {
             "name": "cleaniquecoders/profile",
