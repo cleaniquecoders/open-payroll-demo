@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0794c2dd6edf761be846762dbdbae24d",
+    "content-hash": "b4eca15037e38e3c0e2b473e4fd4c862",
     "packages": [
         {
             "name": "cleaniquecoders/blueprint-macro",
@@ -235,11 +235,16 @@
         {
             "name": "cleaniquecoders/open-payroll",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/open-payroll.git",
+                "reference": "9300e7241ee743bad410783b96f726ae411f9996"
+            },
             "dist": {
-                "type": "path",
-                "url": "../open-payroll",
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/9300e7241ee743bad410783b96f726ae411f9996",
                 "reference": "9300e7241ee743bad410783b96f726ae411f9996",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "cleaniquecoders/blueprint-macro": "^2.1",
@@ -273,11 +278,7 @@
                     "src/Support/helpers.php"
                 ]
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "CleaniqueCoders\\OpenPayroll\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -291,7 +292,8 @@
             "keywords": [
                 "laravel",
                 "package"
-            ]
+            ],
+            "time": "2018-08-19T08:45:50+00:00"
         },
         {
             "name": "cleaniquecoders/profile",
