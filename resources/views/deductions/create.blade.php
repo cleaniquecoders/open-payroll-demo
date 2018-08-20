@@ -21,6 +21,22 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="description">{{ __('Description:') }}</label>
+                            
+                            <input id="description" type="text" 
+                                class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" 
+                                name="description" value="{{ old('description') }}" 
+                                autofocus>
+                            <small class="text-muted pull-right">{{ __('(Optional)') }}</small>
+
+                            @if ($errors->has('description'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('description') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group">
                             <label for="amount">{{ __('Amount:') }}</label>
                             
                             <input id="amount" type="number" 

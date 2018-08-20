@@ -46,12 +46,13 @@ class EarningController extends Controller
         $payslip = \App\Models\OpenPayroll\Payslip::with('payroll', 'user')->findByHashSlugOrId($request->payslip);
         $type    = \App\Models\OpenPayroll\EarningType::find($request->type);
 
-        $payslip->earnings()->create([
+        \App\Models\OpenPayroll\Earning::create([
             'user_id'         => $payslip->user_id,
             'payroll_id'      => $payslip->payroll_id,
+            'payslip_id'      => $payslip->id,
             'earning_type_id' => $request->type,
             'name'            => $type->name,
-            'description'     => $type->name,
+            'description'     => $request->description ?? $type->name,
             'amount'          => money()->toMachine($request->amount),
         ]);
 
