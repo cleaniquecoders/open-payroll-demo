@@ -43,6 +43,6 @@ Route::namespace('OpenPayroll')
 			->as('setting.')
 			->group(function(){
 				Route::resource('deduction', 'DeductionController');
-				Route::resource('earning', 'DeductionController');
+				Route::resource('earning', 'EarningController');
 			});
 	});

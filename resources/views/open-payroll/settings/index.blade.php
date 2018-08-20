@@ -32,7 +32,6 @@
 					<tr>
 						<th class="text-center">Name</th>
 						<th class="text-center">Code</th>
-						<th class="text-center">Is Locked?</th>
 						<th class="text-center">Actions</th>
 					</tr>
 					@foreach($earning_types as $type)
@@ -42,13 +41,8 @@
 								<pre>{{ $type->code }}</pre>
 							</td>
 							<td class="text-center">
-								<span class="badge badge-{{ getYesNoClassName($type->is_locked) }}">
-									{{ $type->is_locked ? 'Yes' : 'No' }}
-								</span>
-							</td>
-							<td class="text-center">
 								@if(!$type->is_locked) 
-									<a href="#" class="btn btn-default border-primary">Edit</a>
+									<a href="{{ route('open-payroll.setting.earning.edit', $type->id) }}" class="btn btn-default border-primary">Edit</a>
 								@endif
 							</td>
 						</tr>
@@ -64,7 +58,6 @@
 					<tr>
 						<th class="text-center">Name</th>
 						<th class="text-center">Code</th>
-						<th class="text-center">Is Locked?</th>
 						<th class="text-center">Actions</th>
 					</tr>
 					@foreach($deduction_types as $type)
@@ -74,13 +67,8 @@
 								<pre>{{ $type->code }}</pre>
 							</td>
 							<td class="text-center">
-								<span class="badge badge-{{ getYesNoClassName($type->is_locked) }}">
-									{{ $type->is_locked ? 'Yes' : 'No' }}
-								</span>
-							</td>
-							<td class="text-center">
 								@if(!$type->is_locked) 
-									<a href="#" class="btn btn-default border-primary">Edit</a>
+									<a href="{{ route('open-payroll.setting.deduction.edit', $type->id) }}" class="btn btn-default border-primary">Edit</a>
 								@endif
 							</td>
 						</tr>

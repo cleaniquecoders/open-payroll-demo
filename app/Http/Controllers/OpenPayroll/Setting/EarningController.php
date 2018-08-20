@@ -4,6 +4,7 @@ namespace App\Http\Controllers\OpenPayroll\Setting;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use \App\Models\OpenPayroll\EarningType;
 
 class EarningController extends Controller
 {
@@ -24,7 +25,7 @@ class EarningController extends Controller
      */
     public function create()
     {
-        //
+        return view('open-payroll.settings.earning.create');
     }
 
     /**
@@ -35,7 +36,19 @@ class EarningController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3|max:255',
+        ]);
+
+        EarningType::create([
+            'name' => $request->name,
+            'code' => kebab_case($request->name, ''),
+            'is_locked' => false,
+        ]);
+
+        swal()->success('Setting', 'You have successfully create a earning type.');
+
+        return redirect()->route('open-payroll.setting.index');
     }
 
     /**
@@ -46,7 +59,7 @@ class EarningController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +70,8 @@ class EarningController extends Controller
      */
     public function edit($id)
     {
-        //
+        $type = EarningType::findOrFail($id);
+        return view('open-payroll.settings.earning.edit', compact('type'));
     }
 
     /**
@@ -69,7 +83,19 @@ class EarningController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $this->validate($request, [
+            'name' => 'required|min:3|max:255',
+        ]);
+
+        EarningType::whereId($id)->update([
+            'name' => $request->name,
+            'code' => kebab_case($request->name, ''),
+            'is_locked' => false,
+        ]);
+
+        swal()->success('Setting', 'You have successfully update a earning type.');
+
+        return redirect()->route('open-payroll.setting.index');
     }
 
     /**
@@ -80,6 +106,10 @@ class EarningController extends Controller
      */
     public function destroy($id)
     {
-        //
+        EarningType::whereId($id)->delete();
+
+        swal()->success('Setting', 'You have successfully delete a earning type.');
+
+        return redirect()->route('open-payroll.setting.index');
     }
 }
