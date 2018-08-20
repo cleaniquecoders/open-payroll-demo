@@ -9,6 +9,8 @@ class SettingController extends Controller
 {
     public function __invoke(Request $request)
     {
-    	return view('settings.index');
+    	$earning_types = \App\Models\OpenPayroll\EarningType::all();
+    	$deduction_types = \App\Models\OpenPayroll\DeductionType::all();
+    	return view('settings.index', compact('earning_types', 'deduction_types'));
     }
 }
