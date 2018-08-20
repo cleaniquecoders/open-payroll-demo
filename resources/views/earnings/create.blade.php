@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Create New Earning') }}</div>
+            <div class="card bg-white border-0 shadow-sm rounded">
+                <div class="card-header bg-white border-0">{{ __('Create New Earning') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('earning.store', ['payslip' => request()->payslip]) }}" aria-label="{{ __('Create New Earning') }}">

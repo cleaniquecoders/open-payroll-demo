@@ -19,8 +19,8 @@
 	</script>
 @endpush
 
-<div class="card">
-	<div class="card-header">
+<div class="card bg-white border-0 shadow-sm rounded">
+	<div class="card-header bg-white border-0">
 		{{ __('Earnings') }}
 		<a href="{{ route('earning.create', ['payslip' => $payslip->hashslug]) }}" class="btn btn-sm border-primary float-right">New Earning</a>
 	</div>

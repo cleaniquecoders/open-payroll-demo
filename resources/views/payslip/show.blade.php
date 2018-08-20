@@ -4,8 +4,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<div class="card">
-					<div class="card-header">
+				<div class="card bg-white border-0 shadow-sm rounded">
+					<div class="card-header bg-white border-0">
 						{{ $payslip->title }}
 						<a href="{{ route('payslip.recalculate', $payslip->hashslug) }}" class="btn btn-sm btn-warning border-warning float-right">Recalculate</a>
 					</div>
