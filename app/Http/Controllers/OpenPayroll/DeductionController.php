@@ -25,7 +25,7 @@ class DeductionController extends Controller
     {
         $types = \App\Models\OpenPayroll\DeductionType::all();
 
-        return view('deductions.create', compact('types'));
+        return view('open-payroll.deductions.create', compact('types'));
     }
 
     /**

@@ -31,7 +31,7 @@ class PayslipController extends Controller
         $employees = \App\Models\OpenPayroll\Employee::has('salary')->has('position')->with('salary', 'position')->get();
         $payrolls  = \App\Models\OpenPayroll\Payroll::whereIsLocked(false)->latest()->get();
 
-        return view('payslip.create', compact('employees', 'payrolls'));
+        return view('open-payroll.payslip.create', compact('employees', 'payrolls'));
     }
 
     /**
@@ -81,7 +81,7 @@ class PayslipController extends Controller
     {
         $payslip = \App\Models\OpenPayroll\Payslip::whereHashslug($id)->with('payroll', 'earnings', 'earnings.type', 'deductions', 'deductions.type')->firstOrFail();
 
-        return view('payslip.show', compact('payslip'));
+        return view('open-payroll.payslip.show', compact('payslip'));
     }
 
     /**

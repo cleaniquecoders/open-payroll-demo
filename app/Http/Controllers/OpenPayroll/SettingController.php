@@ -11,6 +11,6 @@ class SettingController extends Controller
     {
     	$earning_types = \App\Models\OpenPayroll\EarningType::all();
     	$deduction_types = \App\Models\OpenPayroll\DeductionType::all();
-    	return view('settings.index', compact('earning_types', 'deduction_types'));
+    	return view('open-payroll.settings.index', compact('earning_types', 'deduction_types'));
     }
 }

@@ -21,7 +21,7 @@ class PayrollController extends Controller
     {
         $payrolls = \App\Models\OpenPayroll\Payroll::latest()->paginate();
 
-        return view('payroll.index', compact('payrolls'));
+        return view('open-payroll.payroll.index', compact('payrolls'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PayrollController extends Controller
      */
     public function create()
     {
-        return view('payroll.create');
+        return view('open-payroll.payroll.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class PayrollController extends Controller
     {
         $payroll = \App\Models\OpenPayroll\Payroll::with('payslips', 'payslips.user')->findByHashSlugOrId($id);
 
-        return view('payroll.show', compact('payroll'));
+        return view('open-payroll.payroll.show', compact('payroll'));
     }
 
     /**

@@ -24,7 +24,10 @@
 		  <div class="col-10 card border-0 bg-white shadow-sm rounded">
 		    <div class="tab-content card-body border-0" id="nav-tabContent">
 		      <div class="tab-pane fade show active" id="list-earning-types" role="tabpanel" aria-labelledby="list-earning-types-list">
-				<h5>Earning</h5>
+				<h5 class="mb-5">
+					Earning
+					<a href="{{ route('open-payroll.setting.earning.create') }}" class="float-right btn btn-default border border-info">Create New Earning Type</a>
+				</h5>
 				<table class="table table-hover table-condensed">
 					<tr>
 						<th class="text-center">Name</th>
@@ -44,14 +47,19 @@
 								</span>
 							</td>
 							<td class="text-center">
-								
+								@if(!$type->is_locked) 
+									<a href="#" class="btn btn-default border-primary">Edit</a>
+								@endif
 							</td>
 						</tr>
 					@endforeach
 				</table>
 		      </div>
 		      <div class="tab-pane fade" id="list-deduction-types" role="tabpanel" aria-labelledby="list-deduction-types-list">
-		      	<h5>Deduction</h5>
+		      	<h5 class="mb-5">
+		      		Deduction
+		      		<a href="{{ route('open-payroll.setting.deduction.create') }}" class="float-right btn btn-default border border-info">Create New Deduction Type</a>
+		      	</h5>
 		      	<table class="table table-hover table-condensed">
 					<tr>
 						<th class="text-center">Name</th>
@@ -71,7 +79,9 @@
 								</span>
 							</td>
 							<td class="text-center">
-								
+								@if(!$type->is_locked) 
+									<a href="#" class="btn btn-default border-primary">Edit</a>
+								@endif
 							</td>
 						</tr>
 					@endforeach

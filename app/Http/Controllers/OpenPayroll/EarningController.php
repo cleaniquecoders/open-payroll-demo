@@ -25,7 +25,7 @@ class EarningController extends Controller
     {
         $types = \App\Models\OpenPayroll\EarningType::all();
 
-        return view('earnings.create', compact('types'));
+        return view('open-payroll.earnings.create', compact('types'));
     }
 
     /**
