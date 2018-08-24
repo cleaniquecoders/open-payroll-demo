@@ -48,10 +48,10 @@
 		<hr>
 		<div class="row">
 			<div class="col-6">
-				@include('payslip.partials.earnings', ['earnings' => $payslip->earnings])
+				@include('open-payroll.payslip.partials.earnings', ['earnings' => $payslip->earnings])
 			</div>
 			<div class="col-6">
-				@include('payslip.partials.deductions', ['deductions' => $payslip->deductions])
+				@include('open-payroll.payslip.partials.deductions', ['deductions' => $payslip->deductions])
 			</div>
 		</div>
 		<hr>
