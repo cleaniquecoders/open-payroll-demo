@@ -238,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/open-payroll.git",
-                "reference": "dae9affa139e594ce223efed556dd37045b38162"
+                "reference": "930ed6f0eefc48339544db94bc2e94ed63da67fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/dae9affa139e594ce223efed556dd37045b38162",
-                "reference": "dae9affa139e594ce223efed556dd37045b38162",
+                "url": "https://api.github.com/repos/cleaniquecoders/open-payroll/zipball/930ed6f0eefc48339544db94bc2e94ed63da67fa",
+                "reference": "930ed6f0eefc48339544db94bc2e94ed63da67fa",
                 "shasum": ""
             },
             "require": {
@@ -251,6 +251,7 @@
                 "cleaniquecoders/laravel-helper": "^1.0",
                 "cleaniquecoders/laravel-observers": "^1.0",
                 "cleaniquecoders/money-wrapper": "^1.0",
+                "cleaniquecoders/profile": "^1.1",
                 "illuminate/support": "^5.5|^5.6",
                 "php": ">=7.1"
             },
@@ -263,7 +264,10 @@
                 "laravel": {
                     "providers": [
                         "CleaniqueCoders\\OpenPayroll\\OpenPayrollServiceProvider"
-                    ]
+                    ],
+                    "aliases": {
+                        "OpenPayroll": "CleaniqueCoders\\OpenPayroll\\OpenPayrollFacade"
+                    }
                 }
             },
             "autoload": {
@@ -293,7 +297,7 @@
                 "laravel",
                 "package"
             ],
-            "time": "2018-08-20T05:05:38+00:00"
+            "time": "2018-08-24T07:22:20+00:00"
         },
         {
             "name": "cleaniquecoders/profile",
